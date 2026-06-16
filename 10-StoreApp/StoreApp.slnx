@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="StoreApp.Data/StoreApp.Data.csproj" />
+  <Project Path="StoreApp.Web/StoreApp.Web.csproj" />
+</Solution>

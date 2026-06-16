@@ -1,0 +1,27 @@
+﻿@page "/completed/{orderId?}"
+@{
+    Layout = "_CardLayout"; 
+}
+
+<div class="text-center my-5">
+    <div class="card shadow-sm p-5 mx-auto" style="max-width: 600px;">
+        <h2 class="text-success mb-3">Teşekkür Ederiz!</h2>
+
+        <p class="lead"><strong>#@OrderId</strong> numaralı siparişiniz başarıyla oluşturuldu.</p>
+
+        <p class="text-muted">Siparişiniz en kısa sürede adresinize gönderilecektir.</p>
+        <hr class="my-4" />
+        <a href="/" class="btn btn-primary px-4">Alışverişe Devam Et</a>
+    </div>
+</div>
+
+@functions {
+   [BindProperty(SupportsGet =true)]
+    public string? OrderId { get; set; }
+
+    public void OnGet(string? orderId)
+    {
+      
+        OrderId = orderId ?? "Sipariş Bilgisi Alınamadı";
+    }
+}

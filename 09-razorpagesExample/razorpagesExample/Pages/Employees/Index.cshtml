@@ -1,0 +1,29 @@
+﻿@page "/list"
+@model razorpagesExample.Pages.Employees.IndexModel
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h1 class="mb-4">Employees</h1>
+
+<div class="row">
+    @foreach (var emp in Model.Employees)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+
+                <img src="/img/@emp.Photo" class="card-img-top" alt="@emp.Name" style="height: 200px; object-fit: cover;" />
+
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title">@emp.Name</h5>
+                        <p class="card-text text-muted">@emp.Department</p>
+                    </div>
+                    <a asp-page="/employees/details" asp-route-id="@emp.Id" class="btn btn-primary mt-3">Details</a>
+                    <a asp-page="/employees/edit" asp-route-id="@emp.Id" class="btn btn-primary mt-3">Edit</a>
+                </div>
+            </div>
+        </div>
+       
+    }
+</div>

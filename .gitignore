@@ -14,3 +14,4 @@ appsettings.*.json
 
 *.nupkg
 *.snupkg
+*.tmp
