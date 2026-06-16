@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Ogrenci>
+
+<h2>Ogrenci Listesi</h2>
+<hr />
+
+<a asp-action="Create" class="btn btn-primary mb-3">Ogrenci Ekle</a>
+
+<table class="table table-bordered table-striped align-middle app-table">
+    <thead>
+        <tr>
+            <th>Ogrenci Id</th>
+            <th>Ogrenci Ad</th>
+            <th>Ogrenci Soyad</th>
+            <th style="width:150px;"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var ogrenci in Model)
+        {
+            <tr>
+                <td>@ogrenci.OgrenciId</td>
+                <td>@ogrenci.OgrenciAd</td>
+                <td>@ogrenci.OgrenciSoyad</td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@ogrenci.OgrenciId"
+                       class="btn btn-sm btn-primary">
+                        Güncelle
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@ogrenci.OgrenciId"
+                       class="btn btn-sm btn-danger">
+                        Sil
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

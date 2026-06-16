@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Ogretmen>
+
+<h2>Ogretmen Listesi</h2>
+<hr />
+
+<a asp-controller="Ogretmen" asp-action="Create" class="btn btn-primary mb-3">Ogretmen Ekle</a>
+
+<table class="table table-bordered table-striped align-middle app-table">
+    <thead>
+        <tr>
+            <th>Ogretmen Id</th>
+            <th>Ogretmen Ad</th>
+            <th>Ogretmen Soyad</th>
+            <th>Baslama Tarihi</th>
+            <th style="width:150px;"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var ogretmen in Model)
+        {
+            <tr>
+                <td>@ogretmen.OgretmenId</td>
+                <td>@ogretmen.Ad</td>
+                <td>@ogretmen.Soyad</td>
+                <td>@ogretmen.BaslamaTarihi</td>
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@ogretmen.OgretmenId"
+                       class="btn btn-sm btn-primary">
+                        Güncelle
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@ogretmen.OgretmenId"
+                       class="btn btn-sm btn-danger">
+                        Sil
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

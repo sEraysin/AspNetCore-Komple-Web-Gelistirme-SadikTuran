@@ -1,0 +1,39 @@
+@model MeetingInfo
+
+@{
+    ViewBag.Title = "Toplanti Basvuru";
+    Layout = "_Layout2";
+}
+
+<main class="text-center">
+    <h1 class="h4">
+        @ViewData["Selamlasma"]
+    </h1>
+
+    <p class="text-secondary">Etkinlik katilim durumunuzu kisa form ile bildirebilirsiniz.</p>
+
+    <div class="card meeting-card my-3">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <strong>Yer:</strong>
+                @Model.Location
+            </li>
+
+            <li class="list-group-item">
+                <strong>Tarih:</strong>
+                @Model.Date.ToString("dd/MM/yyyy HH:mm") tarihinde gerceklesecek
+            </li>
+
+            <li class="list-group-item">
+                <strong>Katilimci:</strong>
+                @Model.NumberOfPeople kisi
+            </li>
+        </ul>
+    </div>
+
+    <a class="btn btn-primary"
+       asp-controller="Meeting"
+       asp-action="Apply">
+        Basvuru Yap
+    </a>
+</main>

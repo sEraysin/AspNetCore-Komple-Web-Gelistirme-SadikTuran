@@ -1,0 +1,8 @@
+body {
+  background-color: #f7f8fa;
+}
+
+.meeting-card {
+  border: 1px solid #e7eaf0;
+  box-shadow: 0 8px 18px rgba(16, 24, 40, 0.06);
+}

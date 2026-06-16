@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Kurs Yonetimi";
+}
+
+<div class="card app-panel">
+    <div class="card-body">
+        <h1 class="h3">EF Core Kurs Yonetimi</h1>
+        <p class="text-secondary mb-4">
+            Ogrenci, ogretmen, kurs ve kurs kayitlarini tek yerden takip etmek icin hazirlanan sade bir MVC uygulamasi.
+        </p>
+
+        <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" asp-controller="Kurs" asp-action="Index">Kurslari Listele</a>
+            <a class="btn btn-outline-primary" asp-controller="Ogrenci" asp-action="Index">Ogrenciler</a>
+            <a class="btn btn-outline-primary" asp-controller="Ogretmen" asp-action="Index">Ogretmenler</a>
+            <a class="btn btn-outline-primary" asp-controller="KursKayit" asp-action="Index">Kurs Kayitlari</a>
+        </div>
+    </div>
+</div>

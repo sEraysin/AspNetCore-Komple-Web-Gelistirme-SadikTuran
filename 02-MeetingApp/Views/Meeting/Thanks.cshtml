@@ -1,0 +1,34 @@
+@model UserInfo
+
+@{
+    ViewBag.Title = "Basvuru Durumu";
+}
+
+<main class="text-center">
+    <h1 class="h4">Basvuru Durumu</h1>
+
+    @if (Model.WillAttend == true)
+    {
+        <p>
+            Tesekkurler, @Model.Name. Toplantiya sizinle birlikte @ViewBag.UserCount kisi katiliyor.
+        </p>
+
+        <a class="btn btn-sm btn-outline-primary"
+           asp-controller="Meeting"
+           asp-action="List">
+            Katilimcilari Listele
+        </a>
+    }
+    else
+    {
+        <p>
+            @Model.Name, katilmadiginiz icin uzgunuz.
+        </p>
+
+        <a class="btn btn-sm btn-outline-primary"
+           asp-controller="Meeting"
+           asp-action="Apply">
+            Basvuru Formu
+        </a>
+    }
+</main>
