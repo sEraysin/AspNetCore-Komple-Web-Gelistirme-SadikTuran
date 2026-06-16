@@ -9,6 +9,8 @@ obj/
 
 appsettings.*.json
 !appsettings.json
+!appsettings.Development.json
+/appsettings.Development.json
 
 *.nupkg
 *.snupkg
