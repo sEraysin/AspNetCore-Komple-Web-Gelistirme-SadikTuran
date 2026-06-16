@@ -1,0 +1,56 @@
+﻿@model PostCreateViweModel
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8 col-12">
+        <div class="card shadow-sm p-4 border-0 border-top border-primary border-4">
+            <h1 class="h3 mb-4 text-primary">Post Create</h1>
+
+            <form asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label font-weight-bold"></label>
+                    <input asp-for="Title" class="form-control" placeholder="Başlık giriniz..." />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label font-weight-bold"></label>
+                    <input asp-for="Description" class="form-control" placeholder="Kısa açıklama..." />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Url" class="form-label font-weight-bold"></label>
+                    <input asp-for="Url" class="form-control" placeholder="post-url-adresi" />
+                    <span asp-validation-for="Url" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Content" class="form-label font-weight-bold"></label>
+                    <textarea asp-for="Content" class="form-control" rows="5" placeholder="İçerik yazısını buraya giriniz..."></textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary px-4">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        tinymce.init({
+            selector: '#Content',
+            setup: function (editor) {
+                editor.on('change', function () {
+                    tinymce.triggerSave();
+                });
+            }
+        });
+    </script>
+}
